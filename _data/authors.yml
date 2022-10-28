@@ -1,0 +1,64 @@
+Pedro Paulo Palazzo:
+  name: "Pedro Paulo Palazzo"
+  familyName: "Palazzo"
+  givenName: "Pedro Paulo"
+  bio: '<i class="fa fa-graduation-cap"></i> Líder'
+  avatar: "https://avatars3.githubusercontent.com/u/8295666"
+  email: "palazzo@unb.br"
+  #telephone: "+55 61 31 07 74 49"
+  links:
+  - label: "ORCID"
+    icon: "ai fa-fw ai-orcid"
+    url: "https://orcid.org/0000-0002-0187-774X"
+  - label: "CV Lattes"
+    icon: "ai fa-fw ai-lattes"
+    url: "http://lattes.cnpq.br/5767592881382885"
+  - label: "DGP"
+    icon: "fa fa-fw fa-share-alt"
+    url: "http://dgp.cnpq.br/dgp/espelhorh/5767592881382885"
+  - label: "Ciência Vitæ"
+    icon: "ai fa-fw ai-ciencia-vitae"
+    url: "https://www.cienciavitae.pt//pt/D91E-0C60-B56B"
+  - label: "Academia.edu"
+    icon: "ai fa-fw ai-academia"
+    url: "https://unb.academia.edu/PedroPalazzo"
+  - label: "ResearchGate"
+    icon: "ai fa-fw ai-researchgate"
+    url: "https://www.researchgate.net/profile/Pedro-Palazzo"
+  - label: "GitHub"
+    icon: "fab fa-fw fa-github"
+    url: "https://github.com/p3palazzo"
+  - label: "LinkedIn"
+    icon: "fab fa-fw fa-linkedin"
+    url: "https://linkedin.com/in/p3palazzo"
+  - label: "+55 61 31 07 74 49"
+    icon: "fas fa-fw fa-phone-square-alt"
+    url: "tel:+5561-3107-7449"
+  affiliation:
+  - Organization: dmcpatrimonio
+    Role:
+    - name: Líder
+      startDate: 2018-01-09
+      endDate  : 2022-08-09
+  - Organization: classico-trad-ecletico
+    Role:
+    - name: Coordenador
+      startDate: 2018-06-18
+  - Organization: adaptive-construction
+    Role:
+    - name: Coordenador
+      startDate: 2020-05-05
+  - Organization: doctrad
+    Role:
+    - name: Coordenador
+      startDate: 2016-09-01
+  worksFor:
+  - Organization: Universidade de Brasília
+    department: Departamento de Teoria e História da Arquitetura e do Urbanismo
+    Role:
+    - name: Professor Adjunto
+      startDate: 2015-11-30
+      endDate  : 2020-07-06
+    - name: Professor Associado
+      startDate: 2020-07-06
+

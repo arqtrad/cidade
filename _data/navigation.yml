@@ -1,0 +1,12 @@
+# main links
+main:
+  - title: "Sítios"
+    url: /item/
+  - title: "Sobre o projeto"
+    url: /sobre/
+  - title: "Arquivo"
+    url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  - title: "Mapa do site"
+    url: /sitemap/

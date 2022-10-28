@@ -1,0 +1,466 @@
+---
+search: false
+---
+
+@charset "utf-8";
+
+@import url("https://use.typekit.net/hny1sfi.css");
+@import url("https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css");
+
+// Option B: Include parts of Bootstrap [[[1
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc) [[[2
+@import "functions";
+
+// 2. Include any default variable overrides here [[[2
+$font-family-sans-serif: "league-gothic", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+$font-family-base: "eb-garamond", "et-book", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+$headings-font-family: "cormorant-garamond", "eb-garamond", Georgia, Times, serif;
+$primary: #fd7e14; // $orange
+
+// 3. Include remainder of required Bootstrap stylesheets [[[2
+@import "variables";
+
+// 4. Include any default map overrides here [[[2
+
+// 5. Include remainder of required parts [[[2
+@import "maps",
+        "mixins",
+        "root";
+
+// 6. Optionally include any other parts as needed [[[2
+@import "utilities",
+        "reboot",
+        "type",
+        "images",
+        "containers",
+        "grid",
+        "helpers";
+
+@import "buttons",
+        "forms",
+        "list-group",
+        "nav",
+        "navbar",
+        "pagination",
+        "tables";
+
+// [[[2
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "utilities/api";
+
+// [[[1 8. Add additional custom code here
+
+/************************
+ * Block-level elements * [[[2
+ ************************/
+
+body {
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  counter-reset: sidenote-counter;
+}
+
+.is--hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.is--visible {
+  display: block;
+  visibility: visible;
+}
+
+#masthead { // [[[3
+  @extend .d-flex;
+  @extend .flex-wrap;
+  @extend .justify-content-center;
+  @extend .border-bottom;
+
+  a {
+    @extend .d-flex;
+    @extend .align-items-center;
+    margin-right: $font-size-base;
+    img {
+      height    : auto;
+      width     : auto;
+      max-height: 2rem;
+      max-width : 100%;
+    }
+    &.site-title > span {
+      line-height: 85%;
+    }
+  }
+} // ]]]
+
+nav#skip-links {
+  @extend .visually-hidden-focusable;
+}
+
+#main { // [[[3
+  @extend .container;
+}
+
+body:not(.wide):not(.layout--splash) {
+  #main {
+    max-width: 960px;
+  }
+} // ]]]
+
+/**************
+ * Typography * [[[2
+ **************/
+.smallcaps {
+    font-variant: all-small-caps;
+}
+
+a,
+a.nav-link {
+  color: inherit;
+}
+
+a.site-title { // [[[3
+  @extend .smallcaps;
+  @extend .text-decoration-none;
+  font-family: $font-family-base;
+}
+
+span.site-subtitle,
+p.subtitle {
+  font-size: 75%;
+  font-style: italic;
+  font-variant: none;
+  em {
+    font-style: normal;
+  }
+} // ]]]
+
+h1 { // [[[3
+  font-family: $headings-font-family;
+  font-weight: 300;
+} // ]]]
+
+h2, // [[[3
+h3 {
+  font-family: $headings-font-family;
+  font-style : italic;
+  font-weight: 300;
+  em {
+    font-style: normal;
+  }
+}
+
+h2 {
+  @extend .mt-5;
+} // ]]]
+
+.btn, // [[[3
+.nav-pills,
+.social-icons .list-group-item a {
+  font-family: $font-family-sans-serif;
+  @extend .text-decoration-none;
+} // ]]]
+
+/******************************
+ * CSL styling from Tufte-CSS * [[[1
+ ******************************/
+div.csl-bib-body {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+div.csl-entry {
+  clear: both;
+  margin-top: .5rem;
+}
+
+.hanging div.csl-entry {
+  margin-left: $font-size-base;
+  text-indent: -2rem;
+}
+
+div.csl-left-margin {
+  min-width: $font-size-base;
+  float: left;
+}
+
+div.csl-right-inline {
+  margin-left: $font-size-base;
+  padding-left: 1rem;
+}
+
+div.csl-indent {
+  margin-left: $font-size-base;
+}
+
+div.hanging-indent{
+  margin-left: 1.5rem;
+  text-indent: -1.5rem;
+}
+
+/********************************
+ * Minimal-Mistakes Search [[[1 *
+ * _search.scss                 *
+ ********************************/
+
+.layout--search {
+  .archive__item-teaser {
+    margin-bottom: 0.25em;
+  }
+}
+
+.search__toggle {
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+
+  &:hover {
+    color: mix(#000, $primary, 25%);
+  }
+}
+
+.search-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.search-content {
+  display: none;
+  visibility: hidden;
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  &__inner-wrap {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    -webkit-animation: $input-transition;
+    animation: $input-transition;
+    -webkit-animation-delay: 0.15s;
+    animation-delay: 0.15s;
+  }
+
+  &__form {
+    background-color: transparent;
+  }
+
+  .search-input {
+    display: block;
+    margin-bottom: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+    font-size: $h3-font-size;
+  }
+
+  &.is--visible {
+    display: block;
+    visibility: visible;
+
+    &::after {
+      content: "";
+      display: block;
+    }
+  }
+
+  .results__found {
+    margin-top: 0.5em;
+    font-size: $h6-font-size;
+  }
+
+  .archive__item {
+    margin-bottom: 2em;
+  }
+
+  .archive__item-title {
+    margin-top: 0;
+  }
+
+  .archive__item-excerpt {
+    margin-bottom: 0;
+  }
+}
+
+/* Algolia search */
+
+.ais-search-box {
+  max-width: 100% !important;
+  margin-bottom: 2em;
+}
+
+.archive__item-title .ais-Highlight {
+  color: $primary;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+.archive__item-excerpt .ais-Highlight {
+  color: $primary;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/*********************************************
+ * Minimal-Mistakes Priority plus navigation * [[[1
+ * _navigation.scss                          *
+ *********************************************/
+
+.greedy-nav {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: $nav-link-height;
+  background: $gray-200;
+
+  a {
+    display: block;
+    margin: 0 1rem;
+    -webkit-transition: none;
+    transition: none;
+  }
+  
+  img{
+    -webkit-transition: none;
+    transition: none;
+  }
+
+  &__toggle {
+    -ms-flex-item-align: center;
+    align-self: center;
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .visible-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: hidden;
+
+    li {
+      -webkit-box-flex: 0;
+      -ms-flex: none;
+      flex: none;
+    }
+
+    a {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        background: $primary;
+        width: 100%;
+        -webkit-transition: $transition-base;
+        transition: $transition-base;
+        -webkit-transform: scaleX(0) translate3d(0, 0, 0);
+        transform: scaleX(0) translate3d(0, 0, 0); // hide
+      }
+
+      &:hover:before {
+        -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        transform: scaleX(1); // reveal
+      }
+    }
+  }
+
+  .hidden-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 15px;
+    padding: 5px;
+    border: 1px solid $hr-border-color;
+    border-radius: $btn-border-radius;
+    background: $gray-200;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(#000, 0.16),
+      0 2px 10px 0 rgba(#000, 0.12);
+    box-shadow: 0 2px 4px 0 rgba(#000, 0.16), 0 2px 10px 0 rgba(#000, 0.12);
+
+    &.hidden {
+      display: none;
+    }
+
+    a {
+      margin: 0;
+      padding: 10px 20px;
+      font-size: $h5-font-size;
+
+      &:hover {
+        color: $primary;
+        background: $gray-100;
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -11px;
+      right: 10px;
+      width: 0;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      border-color: $hr-border-color transparent;
+      display: block;
+      z-index: 0;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      width: 0;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      border-color: $gray-200 transparent;
+      display: block;
+      z-index: 1;
+    }
+
+    li {
+      display: block;
+      border-bottom: 1px solid $hr-border-color;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.no-js {
+  .greedy-nav {
+    .visible-links {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      overflow: visible;
+    }
+  }
+}
+
+// Independent external content [[[1
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import url("//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css");
+
+// vim: set shiftwidth=2 foldmethod=marker foldmarker=[[[,]]] :

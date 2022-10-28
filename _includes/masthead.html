@@ -1,0 +1,33 @@
+{% capture logo_path %}{{ site.logo }}{% endcapture %}
+
+<header id="masthead" class="px-5 py-3 mb-4">
+  <a class="site-title mb-3 mb-md-0 me-md-auto" href="{{ '/' | relative_url }}">
+    {% unless logo_path == empty -%}
+      <img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}">
+    {%- endunless %}
+    <span class="fs-5 mx-3">
+      {{ site.masthead_title | default: site.title }}
+      {% if site.subtitle %}<br /><span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
+    </span>
+  </a>
+
+  <ul class="nav nav-pills">
+    {%- for link in site.data.navigation.main -%}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
+
+  {% if site.search == true %}
+  <button class="btn search__toggle" type="button">
+    <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
+    <i class="bi-search"></i>
+  </button>
+  {% endif %}
+  <button class="btn greedy-nav__toggle hidden" type="button">
+    <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
+    <i class="bi-list"></i>
+  </button>
+  <ul class="hidden-links hidden"></ul>
+</header>
