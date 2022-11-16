@@ -286,6 +286,14 @@ compress_html:
     envs: development
 
 
+# Collections
+- pages:
+    output: true
+    permalink: /:name/
+- item:
+    output: true
+    permalink: /:name/
+
 # Defaults
 defaults:
   # _posts
@@ -299,3 +307,15 @@ defaults:
       comments: # true
       share: true
       related: true
+  # Item
+  - scope:
+      path: ""
+      collection: item
+    values:
+      author_profile: false
+      classes: wide
+      comments: # true
+      layout: single
+      read_time: false
+      related: true
+      share: true
