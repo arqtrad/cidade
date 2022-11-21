@@ -36,6 +36,6 @@ atestada também no sítio coetâneo de Paraty. Apenas o tramo da rua do
 porto mais próximo ao outeiro da matriz apresenta lotes de dimensões
 irregulares, alguns chegando aos 60 palmos de testada.
 
-A reconstituição do traçado é adaptada daquela proposta por Allan
-Kato (2011) com base na Décima Urbana de 1808.
+A reconstituição do traçado e do parcelamento é adaptada daquela
+proposta por Allan Kato (2011) com base na Décima Urbana de 1808.
 
