@@ -29,8 +29,8 @@ fases de crescimento bem distintas:
    de tipo renascentista ligeiramente alongados e com testadas nos lados
    longos, está consolidado antes de 1817.
 
-   O parcelamento do solo nessa fase parece ter empregado módulos de 25
-   e 30 palmos intercalados com parcelas irregulares, indicando não se
+   O parcelamento do solo nessa fase parece ter empregado módulos de 25,
+   30 e 35 palmos intercalados com parcelas irregulares, indicando não se
    tratar de um projeto unificado, apesar da relativa homogeneidade
    morfológica. O arruamento apresenta caixas com cerca de 50 palmos.
 
